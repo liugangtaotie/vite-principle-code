@@ -21,6 +21,7 @@ app.use(async (ctx) => {
   }
 })
 
+// 监听3000端口
 app.listen(3000, () => {
   console.info('vite start at 3000')
 })
