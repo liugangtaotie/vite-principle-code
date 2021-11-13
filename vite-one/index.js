@@ -3,10 +3,12 @@ const path = require('path')
 const fs = require('fs')
 const app = new Koa()
 
-// 处理逻辑中间件
+// 处理逻辑中间件 ctx 执行上下文
 app.use(async (ctx) => {
   const { url } = ctx.request
   console.info('url:' + url)
+
+  // '/' => 'index.html'
   if (url === '/') {
     ctx.type = 'text/html'
     const content = fs.readFileSync('./index.html', 'utf-8')
