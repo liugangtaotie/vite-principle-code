@@ -54,8 +54,6 @@ app.use(async (ctx) => {
       url.replace('/@modules/', '')
     )
 
-    console.info('prefix', prefix)
-
     const module = require(prefix + '/package.json').module
 
     // dist/vue.runtime.esm-bundler.js
